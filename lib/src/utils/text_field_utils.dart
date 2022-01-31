@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_login/src/models/login_user_type.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TextFieldUtils {
   static String getAutofillHints(LoginUserType userType) {
@@ -23,6 +26,30 @@ class TextFieldUtils {
       case LoginUserType.email:
       default:
         return TextInputType.emailAddress;
+    }
+  }
+
+  static Icon getPrefixIcon(LoginUserType userType) {
+    switch (userType) {
+      case LoginUserType.name:
+        return const Icon(FontAwesomeIcons.userCircle);
+      case LoginUserType.phone:
+        return const Icon(FontAwesomeIcons.phoneSquareAlt);
+      case LoginUserType.email:
+      default:
+        return const Icon(FontAwesomeIcons.envelopeOpen);
+    }
+  }
+
+  static String getLabelText(LoginUserType userType) {
+    switch (userType) {
+      case LoginUserType.name:
+        return "Name";
+      case LoginUserType.phone:
+        return "Phone";
+      case LoginUserType.email:
+      default:
+        return "Email";
     }
   }
 }

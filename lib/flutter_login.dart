@@ -282,7 +282,7 @@ class FlutterLogin extends StatefulWidget {
       this.passwordValidator,
       this.onSubmitAnimationCompleted,
       this.logoTag,
-      this.userType = LoginUserType.phone,
+      this.userType = LoginUserType.email,
       this.titleTag,
       this.showDebugButtons = false,
       this.loginProviders = const <LoginProvider>[],
